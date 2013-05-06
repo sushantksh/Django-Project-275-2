@@ -14,7 +14,6 @@ import httpconnection
 #SQLite-Django auth
 from django.contrib.auth import logout
 
-
 def signIn(request):
     return render(request, 'login.html')
     
@@ -41,15 +40,15 @@ def signUp(request):
 def signUpHome(request):
     
     if request.POST:
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-	firstname = request.POST.get('firstname')
-	lastname = request.POST.get('lastname')
-	user = userTable(username=request.POST.get('username'), password=request.POST.get('password'),firstName=request.POST.get('firstname'),lastName=request.POST.get('lastname'))
-	user.save()
+       username = request.POST.get('username')
+       password = request.POST.get('password')
+       firstname = request.POST.get('firstname')
+       lastname = request.POST.get('lastname')
+       user = userTable(username=request.POST.get('username'), password=request.POST.get('password'), firstName = request.POST.get('firstname'), lastName = request.POST.get('lastname'))
+       user.save()
 
-    payload = { "email": username,"pwd": password,"fName": firstname,"lName": lastname} 
-    data=json.dumps(payload)
+    payload = { "email": username,"pwd": password,"fName": firstname,"lName": lastname}
+    data = json.dumps(payload)
 
     response = httpconnection.signUpHome_Connect(data)
     convertToJson = response.json()
