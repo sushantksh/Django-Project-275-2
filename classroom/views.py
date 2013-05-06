@@ -1,14 +1,18 @@
 # Create your views here.
 from django.shortcuts import render_to_response, render
 from django.contrib.auth import authenticate, login
-# from classroom.models import posts
+#from classroom.models import posts
 from django.http import HttpResponse
 from django.template import RequestContext
 import requests
 import json
 import sys
+<<<<<<< HEAD
 #SQLite models 
 from classroom.models import userTable
+=======
+from django.contrib.auth import logout
+>>>>>>> 5cf1e18... Sushant - test
 #from requests import session
 import httpconnection
 #SQLite-Django auth
@@ -67,7 +71,7 @@ def signOut(request):
 
 ######_________________________________ USER __________________________________ #######
 
-
+# Check the GIT
 
 
 
