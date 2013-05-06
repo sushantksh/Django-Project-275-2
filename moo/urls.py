@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 import classroom.views
-from classroom.views import signIn, signOut, signUp, home, signUpHome#, getUser, updateUser, deleteUser, enrollCourse, dropCourse, addCourse, getCourse, listCourse, updateCourse, deleteCourse, addCategory, getCategory, listCategory, addQuiz, getQuiz, listQuiz, updateQuiz, deleteQuiz, addAnnouncement, listAnnouncement, getAnnouncement, updateAnnouncement, deleteAnnouncement, addDiscussion, listDiscussion, getDiscussion, updateDiscussion, deleteDiscussion, addMessage, listMessage, updateMessage, deleteMessage
+from classroom.views import index,signIn, signOut, signUp, home, signUpHome#, getUser, updateUser, deleteUser, enrollCourse, dropCourse, addCourse, getCourse, listCourse, updateCourse, deleteCourse, addCategory, getCategory, listCategory, addQuiz, getQuiz, listQuiz, updateQuiz, deleteQuiz, addAnnouncement, listAnnouncement, getAnnouncement, updateAnnouncement, deleteAnnouncement, addDiscussion, listDiscussion, getDiscussion, updateDiscussion, deleteDiscussion, addMessage, listMessage, updateMessage, deleteMessage
 
 # from django.conf.urls.defaults import *
 # Uncomment the next two lines to enable the admin:
@@ -9,6 +9,7 @@ from classroom.views import signIn, signOut, signUp, home, signUpHome#, getUser,
 
 urlpatterns = patterns('',
       # user url's
+      url(r'^$', index),
       url(r'^signIn/$', signIn),
       url(r'^signUp/$', signUp),       # signup is create user as mentioned in Format
       url(r'^home/$', home),
