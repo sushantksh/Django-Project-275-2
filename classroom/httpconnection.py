@@ -187,3 +187,4 @@ def deleteMessage_Connect(data):
    return requests.post(url+discussion+"/", data)
 
 
+# Check for messages
