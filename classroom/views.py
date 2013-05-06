@@ -7,8 +7,12 @@ from django.template import RequestContext
 import requests
 import json
 import sys
+#SQLite models 
+from classroom.models import usercollection
 #from requests import session
 import httpconnection
+#SQLite-Django auth
+from django.contrib.auth import logout
 
 
 def signIn(request):
@@ -41,6 +45,9 @@ def signUpHome(request):
         password = request.POST.get('password')
 	firstname = request.POST.get('firstname')
 	lastname = request.POST.get('lastname')
+	user = usercollection(username=request.POST.get('username'), password=request.POST.get('password'))
+	user.save()
+	usercollection.objects.all()
 
     payload = { "email": username,"pwd": password,"fName": firstname,"lName": lastname} 
     data=json.dumps(payload)
@@ -52,12 +59,13 @@ def signUpHome(request):
 
 # sign out function
 def signOut(request):
-    
-    resp = requests.get("http://localhost:8080/user/:email",data=json.dumps(payload))
+    logout(request)
+    return render(request, 'login.html')
+    #resp = requests.get("http://localhost:8080/user/:email",data=json.dumps(payload))
     #print str(r)+" ---- > Call Back from Bottle Achieved "
-    convertToJson = response.json()
-    print convertToJson
-    return render_to_response("login.html",convertToJson,context_instance=RequestContext(request))    
+    #convertToJson = response.json()
+    #print convertToJson
+    #return render_to_response("login.html",convertToJson,context_instance=RequestContext(request))    
 
 ######_________________________________ USER __________________________________ #######
 
