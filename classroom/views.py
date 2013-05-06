@@ -8,7 +8,7 @@ import requests
 import json
 import sys
 #SQLite models 
-from classroom.models import usercollection
+from classroom.models import userTable
 #from requests import session
 import httpconnection
 #SQLite-Django auth
