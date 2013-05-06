@@ -45,9 +45,8 @@ def signUpHome(request):
         password = request.POST.get('password')
 	firstname = request.POST.get('firstname')
 	lastname = request.POST.get('lastname')
-	user = usercollection(username=request.POST.get('username'), password=request.POST.get('password'),firstName=request.POST.get('firstname'),lastName=request.POST.get('lastname'))
+	user = userTable(username=request.POST.get('username'), password=request.POST.get('password'),firstName=request.POST.get('firstname'),lastName=request.POST.get('lastname'))
 	user.save()
-	usercollection.objects.all()
 
     payload = { "email": username,"pwd": password,"fName": firstname,"lName": lastname} 
     data=json.dumps(payload)
@@ -68,10 +67,6 @@ def signOut(request):
     #return render_to_response("login.html",convertToJson,context_instance=RequestContext(request))    
 
 ######_________________________________ USER __________________________________ #######
-
-#def getUser(request):
-    # Get email id of user from html
- #   resp = requests.get(url+user+"email")
 
 
 
