@@ -45,7 +45,7 @@ def signUpHome(request):
         password = request.POST.get('password')
 	firstname = request.POST.get('firstname')
 	lastname = request.POST.get('lastname')
-	user = usercollection(username=request.POST.get('username'), password=request.POST.get('password'))
+	user = usercollection(username=request.POST.get('username'), password=request.POST.get('password'),firstName=request.POST.get('firstname'),lastName=request.POST.get('lastname'))
 	user.save()
 	usercollection.objects.all()
 
