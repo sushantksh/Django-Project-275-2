@@ -19,7 +19,7 @@ urlpatterns = patterns('',
       #url(r'^update_user/$',updateUser),
       #url(r'^delete_user/$',deleteUser),
 
-      url(r'^signOut/$', signOut),
+      url(r'^logout/$', signOut),
 
       # course url's
       #url(r'^enroll_course/$',enrollCourse),
