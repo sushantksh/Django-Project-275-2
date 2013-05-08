@@ -2,10 +2,11 @@ from django.conf.urls import patterns, include, url
 import classroom.views
 from classroom.views import index,signIn, signOut, signUp, home, signUpHome#, getUser, updateUser, deleteUser, enrollCourse, dropCourse, addCourse, getCourse, listCourse, updateCourse, deleteCourse, addCategory, getCategory, listCategory, addQuiz, getQuiz, listQuiz, updateQuiz, deleteQuiz, addAnnouncement, listAnnouncement, getAnnouncement, updateAnnouncement, deleteAnnouncement, addDiscussion, listDiscussion, getDiscussion, updateDiscussion, deleteDiscussion, addMessage, listMessage, updateMessage, deleteMessage
 
-# from django.conf.urls.defaults import *
+from django.conf.urls.defaults import *
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+#from django.contrib import admin
+#import django.contrib.admin
+#admin.autodiscover()
 
 urlpatterns = patterns('',
       # user url's
@@ -61,10 +62,6 @@ urlpatterns = patterns('',
       #url(r'^list_message/$',listMessage),
       #url(r'^update_message/$',updateMessage),
       #url(r'^delete_message/$',deleteMessage),
-)
-
-
-
     # Examples:
     # url(r'^$', 'moo.views.home', name='home'),
     # url(r'^moo/', include('moo.foo.urls')),
@@ -72,8 +69,9 @@ urlpatterns = patterns('',
 
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+      #url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+      #url(r'^admin/', include(admin.site.urls)),
+)
 

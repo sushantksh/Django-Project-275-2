@@ -185,6 +185,3 @@ def updateMessage_Connect(data):
 def deleteMessage_Connect(data):
    print "deleteMessageConnect"
    return requests.post(url+discussion+"/", data)
-
-
-# Check for messages
